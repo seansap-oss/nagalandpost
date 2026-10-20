@@ -1,51 +1,34 @@
-# Nagaland Post — Editorial Website Concept v1.2.0
+# Nagaland Post v1.3.0
 
-Premium newspaper-style React/Vite presentation website, designed for client review and deployment on Vercel.
+Client presentation React/Vite website, preserving v1.2.0 editorial content, with social-sharing and a private analytics viewer.
 
-## Features
-- v1.2.0: the homepage PDF front page now matches the actual downloadable PDF, article browser titles, Escape to close overlays, improved keyboard focus visibility
-
-- v1.2.0: improved offline image fallback, article print button, share confirmation, localized lead label and story count, Vercel deployment configuration
-- All 11 existing editorial categories, homepage news grid and filtering
-- 14 clickable original editorial article write-ups with featured images
-- English and Nagamese language toggle: headlines, story copy and interface switch together
-- E-paper modal with embedded real PDF viewer, open and download actions
-- Responsive desktop/tablet/phone layouts, search and category navigation
-- App promotion and newsletter UI
-- Client-side article URLs (`?story=ID`) which remain directly loadable on Vercel
-
-## Windows / VS Code setup
+## Windows VS Code
 
 ```powershell
-cd D:\
-Expand-Archive -Path "$env:USERPROFILE\Downloads\nagaland-post-v1.2.0.zip" -DestinationPath "D:\" -Force
-cd D:\nagaland-post-v1.2.0
+cd D:\Nagalandpost\nagaland-post-v1.3.0
 npm install
 npm run dev
+# Separate terminal: npm run build
 ```
 
-Open http://localhost:5173
+## GitHub / Vercel
 
-## GitHub and Vercel
+Vercel project should be configured with framework **Vite**, build `npm run build`, output `dist`, root `/` and auto-deploy from `main`. Do not upload `node_modules` or `dist`.
 
-```powershell
-git init
-git add .
-git commit -m "Nagaland Post website concept v1.2.0"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-git push -u origin main
-```
+## Private analytics — REQUIRED deployment setup
 
-On Vercel choose **Add New → Project → Import Git Repository**. Framework should auto-detect Vite. Build command `npm run build`; output folder `dist`.
+1. Create an Upstash Redis database that supports REST commands (e.g., Upstash Console / Vercel Marketplace Upstash).
+2. In **Vercel project → Settings → Environment Variables**, configure `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `ANALYTICS_SALT` (a unique random string), and `ADMIN_PASSWORD` (your private password). For initial testing, use your chosen admin password, but rotate it before sharing with customers.
+3. Redeploy after adding variables.
+4. On the published website, press and hold the footer **©** for **5 seconds** (desktop or touch); enter the `ADMIN_PASSWORD`. Analytics appear within a private overlay. No password is hard-coded in the React bundle.
+5. In local `npm run dev` mode, the Vite dev server does not run `/api` serverless routes; analytics require a Vercel deployment or `vercel dev` with environment credentials. If credentials are missing, analytics returns an explicit configuration error. Tracking begins after setup, not retroactively.
 
-## Editorial, photography and deployment notes
+Tracked: page/article visits, anonymized visitor ID, approximate country/region/city based on Vercel geolocation headers, time on visible page (approximate), PDF open/download actions, and share-button clicks. Individual raw visitor IP addresses are not stored. Records are capped at 20,000 events; admin totals are over that rolling retention window, not all-time. Because analytics uses browser local storage and client events, ad blockers, private browsing, and disabled JS may reduce counts. Consent/notice should be reviewed before real-client production use. User authentication to news website is not implemented.
 
-This is **an independent client presentation concept, not the publisher's official website or live publication**. Story topics and dates were selected from the Nagaland Post site on 20 October 2026. All body copy is newly written editorial summary/feature-style copy; it does not reproduce full copyrighted news articles and should be replaced with licensed newsroom text before launch. Headlines are adaptation of public story themes. Illustrative photography is loaded from Unsplash CDN (external connection required); images are not claimed to be actual event photographs. Image subjects may not match the news events. Replace with licensed, properly credited editorial photography for publication. The PDF is a designed concept edition based on this presentation, **not an actual Nagaland Post print edition**. The Nagamese translations are draft Roman-script localization and must be checked by a fluent editor before publication, especially sensitive reporting. Newsletter shows an integration-required message rather than collecting addresses. Mobile apps and hybrid PDF article linking are future-phase ideas, not built or claimed operational.
+## Social sharing and publishing
 
-## Handoff
+Article pages include Facebook and X share links, Instagram copy-link guidance, copy-link, and print. Header social links currently point to each platform's generic homepage: replace `socialLinks` in `src/main.jsx` with official publisher accounts before launch. Instagram does not have a normal browser article URL-share endpoint. Editorial publishing drawer is a UI and manual workflow. **Automatic posting is NOT implemented**; requires Meta app review, Facebook Page and Instagram professional account connections, permissions and secure OAuth token storage, plus a separately configured X API integration. Never put platform access tokens in Vite public variables.
 
-Versions are tracked in package.json and visible in footer. Built-in route is plain browser history with query links, so Vercel static deploy works without additional routing config.
+## Editorial disclaimer
 
-## Updating an existing VS Code folder
-If you already extracted v1.0.0, back up any edits and extract this release into a fresh `D:\nagaland-post-v1.2.0` folder. Test it before replacing the GitHub branch.
+Current written articles, translated text and PDF are illustrative presentation material; not confirmed as live news. Review content and Nagamese translations with client before publicizing as official reporting.
