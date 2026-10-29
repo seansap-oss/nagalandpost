@@ -1,4 +1,4 @@
-# Nagaland Post v1.3.0
+# Sangai Express v1.3.0
 
 Client presentation React/Vite website, preserving v1.2.0 editorial content, with social-sharing and a private analytics viewer.
 

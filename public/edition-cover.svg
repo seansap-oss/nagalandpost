@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 850" role="img" aria-labelledby="title desc">
+  <title id="title">Sangai Express edition cover</title>
+  <desc id="desc">Illustrative Sangai Express newspaper front page for October 20, 2026.</desc>
+  <rect width="600" height="850" fill="#f6f3ed"/>
+  <g fill="#1b1b1b" font-family="Georgia, serif">
+    <text x="30" y="30" font-size="8">TUESDAY, OCTOBER 20, 2026</text>
+    <text x="570" y="30" text-anchor="end" font-size="8">VOL. 1 • PREVIEW</text>
+    <path d="M30 38H570" stroke="#1b1b1b"/>
+    <text x="300" y="90" text-anchor="middle" font-size="43" font-weight="700">SANGAI EXPRESS</text>
+    <text x="300" y="111" text-anchor="middle" font-size="12">THE VOICE OF NAGALAND</text>
+    <path d="M30 124H570M30 151H570" stroke="#1b1b1b"/>
+    <text x="30" y="143" fill="#a71919" font-size="9" font-weight="700">NAGALAND  /  NORTHEAST  /  NATIONAL  /  WORLD  /  BUSINESS  /  SPORTS</text>
+    <text x="30" y="171" fill="#a71919" font-size="11" font-weight="700">TOP STORY  /  NORTHEAST</text>
+    <text x="30" y="205" font-size="27" font-weight="700">THREE KILLED AMID RENEWED</text>
+    <text x="30" y="237" font-size="27" font-weight="700">VIOLENCE IN MANIPUR</text>
+    <text x="30" y="268" fill="#777" font-size="12">Fresh reports place civilian safety and regional peace under renewed scrutiny.</text>
+  </g>
+  <image href="/images/hills.jpg" x="30" y="285" width="540" height="205" preserveAspectRatio="xMidYMid slice"/>
+  <g fill="#1b1b1b" font-family="Georgia, serif" font-size="11">
+    <text x="30" y="507" fill="#777" font-size="8">Illustrative editorial photograph  •  October 20, 2026</text>
+    <text x="30" y="535">Reports of violence in Manipur have once again</text>
+    <text x="30" y="551">placed the protection of communities at the centre of</text>
+    <text x="30" y="567">public attention, with families seeking answers.</text>
+    <text x="320" y="535">The developments are being closely followed across</text>
+    <text x="320" y="551">the Northeast, where concerns about peace and access</text>
+    <text x="320" y="567">remain significant for communities and families.</text>
+    <path d="M30 650H570" stroke="#1b1b1b"/>
+    <text x="30" y="675" fill="#a71919" font-size="13" font-weight="700">IN TODAY’S EDITION</text>
+    <path d="M30 682H570" stroke="#a71919"/>
+    <text x="30" y="710">• NH-202 compensation findings disputed</text>
+    <text x="30" y="732">• Nagaland culture reaches Canadian film festival</text>
+    <text x="30" y="754">• Dr. T. Ao Trophy celebrates district football</text>
+    <text x="30" y="820" fill="#777" font-size="8">PRESENTATION EDITION — NOT AN OFFICIAL PRINT ISSUE</text>
+    <text x="570" y="820" text-anchor="end" font-size="10">1</text>
+  </g>
+</svg>
