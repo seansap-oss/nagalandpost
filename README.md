@@ -31,4 +31,4 @@ Article pages include Facebook and X share links, Instagram copy-link guidance, 
 
 ## Editorial disclaimer
 
-Current written articles, translated text and PDF are illustrative presentation material; not confirmed as live news. Review content and Nagamese translations with client before publicizing as official reporting.
+Current written articles, translated text and PDF are illustrative presentation material; not confirmed as live news. Review content and Manipuri sample translations with client before publicizing as official reporting.
